@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mojos>
+    <mojo>
+		<goal>functional-test-webdriver</goal>
+		<description>Goal which functional test-webdriver the Site-Core project</description>
+		<requiresDirectInvocation>false</requiresDirectInvocation>
+		<requiresProject>true</requiresProject>
+		<requiresReports>false</requiresReports>
+		<aggregator>false</aggregator>
+		<requiresOnline>false</requiresOnline>
+		<inheritedByDefault>true</inheritedByDefault>
+		<language>java</language>
+		<instantiationStrategy>per-lookup</instantiationStrategy>
+		<executionStrategy>once-per-session</executionStrategy>
+		<threadSafe>false</threadSafe>
+		<configuration>
+		<parameters>
+			<parameter>
+				<name>
+					<value lang="en">Test Against</value>
+				</name>
+				<type>List</type>
+				<required>false</required>
+				<editable>true</editable>
+				<description></description>
+				<key>testAgainst</key>
+				<possibleValues>
+					<value key="build" dependency="buildNumber">Build</value>
+					<value key="server" dependency="showSettings">Server</value>
+				</possibleValues>
+				<value></value>
+				<sort>false</sort>
+				<show>true</show>
+			</parameter>
+			<parameter>
+				<name>
+					<value lang="en">Build Number</value>
+				</name>
+				<type>DynamicParameter</type>
+				<dynamicParameter>
+				<class>com.photon.phresco.impl.BuildInfoParameterImpl</class>
+				<dependencies>
+					<dependency>
+						<groupId>com.photon.phresco.commons</groupId>
+						<artifactId>phresco-commons</artifactId>
+						<type>jar</type>
+						<version>2.0.0.27002</version>
+					</dependency>
+				</dependencies>
+				</dynamicParameter>
+				<required>false</required>
+				<editable>true</editable>
+				<description></description>
+				<key>buildNumber</key>
+				<multiple>false</multiple>
+				<value></value>
+				<sort>false</sort>
+				<show>true</show>
+				<dependency>buildEnvironmentName</dependency>
+			</parameter>
+			<parameter>
+				<name>
+				<value lang="en">Browser</value>
+				</name>
+				<type>List</type>
+				<required>false</required>
+				<editable>true</editable>
+				<description></description>
+				<key>browser</key>
+				<possibleValues>
+					<value key="firefox">Firefox</value>
+					<value key="safari">Safari</value>
+					<value key="opera">Opera</value>
+					<value key="internetExplorer">Internet Explorer</value>
+					<value key="chrome">Chrome</value>
+				</possibleValues>
+				<multiple>false</multiple>
+				<value></value>
+				<sort>false</sort>
+				<show>true</show>
+			</parameter>
+			<parameter>
+				<name>
+					<value lang="en">Environment</value>
+				</name>
+				<type>DynamicParameter</type>
+				<dynamicParameter>
+				<class>com.photon.phresco.impl.BuildInfoEnvironmentsImpl</class>
+				<dependencies>
+					<dependency>
+						<groupId>com.photon.phresco.commons</groupId>
+						<artifactId>phresco-commons</artifactId>
+						<type>jar</type>
+						<version>2.0.0.27002</version>
+					</dependency>
+				</dependencies>
+				</dynamicParameter>
+				<required>true</required>
+				<editable>true</editable>
+				<key>buildEnvironmentName</key>
+				<multiple>false</multiple>
+				<value></value>
+				<sort>false</sort>
+				<show>true</show>
+			</parameter>
+			<parameter>
+				<name>
+					<value lang="en">Show Settings</value>
+				</name>
+				<type>Boolean</type>
+				<required>false</required>
+				<editable>true</editable>
+				<description></description>
+				<key>showSettings</key>
+				<multiple>false</multiple>
+				<value>false</value>
+				<sort>false</sort>
+				<show>false</show>
+				<dependency>environmentName</dependency>
+			</parameter>
+			<parameter>
+				<name>
+					<value lang="en">Environment</value>
+				</name>
+				<type>DynamicParameter</type>
+				<dynamicParameter>
+				<class>com.photon.phresco.impl.EnvironmentsParameterImpl</class>
+				<dependencies>
+				<dependency>
+				<groupId>com.photon.phresco.commons</groupId>
+				<artifactId>phresco-commons</artifactId>
+				<type>jar</type>
+				<version>2.0.0.27002</version>
+				</dependency>
+				</dependencies>
+				</dynamicParameter>
+				<required>true</required>
+				<editable>true</editable>
+				<key>environmentName</key>
+				<multiple>false</multiple>
+				<value></value>
+				<sort>false</sort>
+				<show>true</show>
+			</parameter>
+		</parameters>
+	</configuration>
+	</mojo>
+</mojos>

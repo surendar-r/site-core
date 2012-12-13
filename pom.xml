@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.photon.phresco</groupId>
+    <artifactId>two-tech-sitecore</artifactId>
+    <name>two-tech-sitecore</name>
+    <version>3.4</version>
+    <url></url>
+    <build>
+        <sourceDirectory>source/src</sourceDirectory>
+        <directory>do_not_checkin/target</directory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.1</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-confluence</artifactId>
+                            <version>1.2</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.photon.phresco.plugins</groupId>
+                <artifactId>phresco-maven-plugin</artifactId>
+                <version>2.0.0.27003-SNAPSHOT</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.5</version>
+                        <executions>
+                            <execution>
+<id>default-clean</id>
+<phase>pre-clean</phase>
+<goals>
+    <goal>clean</goal>
+</goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <filesets>
+<fileset>
+    <directory>do_not_checkin/build</directory>
+    <includes>
+        <include>**/*</include>
+							  </includes>
+    <followSymlinks>false</followSymlinks>
+							</fileset>
+						  </filesets>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <repositories>
+        <repository>
+            <id>photon</id>
+            <url>http://172.16.17.226:8080/repository/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <properties>
+        <sonar.dotnet.visualstudio.solution.file>source/src/sitecore.sln</sonar.dotnet.visualstudio.solution.file>
+        <sonar.language>cs</sonar.language>
+        <sonar.ndeps.mode>skip</sonar.ndeps.mode>
+        <sonar.fxcop.mode>skip</sonar.fxcop.mode>
+    </properties>
+</project>

@@ -1,0 +1,1 @@
+[{"buildNo":1,"timeStamp":"12/Dec/2012 11:10:19","buildStatus":"FAILURE","buildName":"one.zip","environments":["Production"]},{"buildNo":2,"timeStamp":"12/Dec/2012 11:13:52","buildStatus":"FAILURE","buildName":"one.zip","environments":["Production"]},{"buildNo":2,"timeStamp":"12/Dec/2012 11:15:08","buildStatus":"SUCCESS","buildName":"one.zip","environments":["Production"]}]

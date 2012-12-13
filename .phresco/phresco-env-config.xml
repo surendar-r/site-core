@@ -1,0 +1,12 @@
+<environments>
+    <environment default="true" desc="Production Environment is used for Development purpose only" name="Production">
+        <WebService desc="hi" name="server">
+            <sitecoreInstPath/>
+            <port>3322</port>
+            <password>root</password>
+            <context>hello</context>
+            <host>localhost</host>
+            <protocol>http</protocol>
+        </WebService>
+    </environment>
+</environments>

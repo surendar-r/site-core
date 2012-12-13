@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SiteCoreSuite"   thread-count="5" verbose="3" >
+     
+	<test name="SiteCoreTest" junit="false" preserve-order="true">  
+		 	<classes> 
+	  		<class name="com.photon.phresco.testcases.WelcomeSiteCoreTest"/>
+	  		</classes> 
+ 	</test>  
+	
+</suite>
+ 
+
+ 	
+ 
